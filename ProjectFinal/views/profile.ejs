@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            body{
+                font-family: arial;               
+            }
+            nav li{
+                padding: 20px;
+                display: inline-block;
+                
+            }
+
+            nav a{
+                padding: 10px;
+                font-size: 18px;
+                color: white;
+                background-color:#39D143;
+                text-decoration: none;
+                display: block;
+            }
+            .abc{
+                padding-top:8px;
+                padding-left: 60px;
+                font-size: 35px;
+                color:gray;
+            }
+            main{
+                max-width: 960px;
+                margin: 30px auto;
+                padding: 0 10px;
+                color: #333;
+            }
+            main img{
+                width: 35%;
+                margin-right: 10px;
+                position: relative;
+                top: 12px;
+                border-radius: 50%;
+            }
+            main p{
+                padding-top: 35px;
+                padding-right: 240px;
+                float: right;
+                font-size: 100px;
+            }
+        </style>
+    </head>
+    <body>
+            <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/profile">Info</a></li>
+                        <% if (user) { %>
+                        <li><a href="/auth/logout">Log out</a></li>
+                        <% } else { %>
+                        <li><a href="/auth/login">Log in</a></li>
+                        <% } %>              
+                    </ul>
+                </nav>
+            <h1 class="abc">Hi, <%= user.username %></h1>
+        <main>
+            <img src="<%= user.thumbnail %>" />
+            <p><%= user.username %></p>
+            <p><%= user.name %></p>
+        </main>
+    </body>
+</html>
+

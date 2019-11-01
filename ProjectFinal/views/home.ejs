@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            body{
+                font-family: arial;               
+            }
+            nav li{
+                padding: 20px;
+                display: inline-block;
+                
+            }
+
+            nav a{
+                padding: 10px;
+                font-size: 18px;
+                color: white;
+                background-color:#39D143;
+                text-decoration: none;
+                display: block;
+            }
+            .abc{
+                padding-top:150px;
+                text-align: center;
+                font-size: 100px;
+                color:#FA3B55;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/profile">Info</a></li>
+                <% if (user) { %>
+                <li><a href="/auth/logout">Log out</a></li>
+                <% } else { %>
+                <li><a href="/auth/login">Log in</a></li>
+                <% } %>              
+            </ul>
+        </nav>
+        <h1 class="abc">Welcome to home page!</h1>
+    </body>
+</html>
